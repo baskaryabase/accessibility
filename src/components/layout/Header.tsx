@@ -1,12 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu, X, Volume2, Settings } from 'lucide-react'
+import { Menu, X, Volume2, Settings, LogOut } from 'lucide-react'
 import { useAccessibility } from '@/components/providers/AccessibilityProvider'
+import { useAuth } from '@/components/providers/AuthProvider'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { state, dispatch } = useAccessibility()
+  const { authState, logout } = useAuth()
 
   const navigation = [
     { name: 'Home', href: '#home', current: true },
@@ -19,6 +21,12 @@ export function Header() {
 
   const toggleVoice = () => {
     dispatch({ type: 'TOGGLE_VOICE', payload: !state.isVoiceActive })
+  }
+
+  const handleLogout = () => {
+    if (window.confirm('Are you sure you want to log out?')) {
+      logout()
+    }
   }
 
   return (
@@ -60,6 +68,13 @@ export function Header() {
 
           {/* Accessibility Controls */}
           <div className="flex items-center space-x-4">
+            {/* User Info */}
+            <div className="hidden md:flex items-center space-x-2">
+              <span className="text-sm text-gray-600">
+                Welcome, <span className="font-medium text-gray-900">{authState.user?.username}</span>
+              </span>
+            </div>
+
             <button
               onClick={toggleVoice}
               className={`
@@ -81,6 +96,16 @@ export function Header() {
               aria-label="Accessibility settings"
             >
               <Settings className="h-5 w-5" />
+            </button>
+
+            {/* Logout Button */}
+            <button
+              onClick={handleLogout}
+              className="p-2 rounded-md text-gray-600 hover:text-red-600 hover:bg-red-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              aria-label="Log out of EduAssist"
+              title="Log out"
+            >
+              <LogOut className="h-5 w-5" />
             </button>
 
             {/* Mobile menu button */}

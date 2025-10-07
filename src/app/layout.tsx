@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { AccessibilityProvider } from '@/components/providers/AccessibilityProvider'
+import { AuthProvider } from '@/components/providers/AuthProvider'
 import { SkipLink } from '@/components/accessibility/SkipLink'
+import { AuthWrapper } from '@/components/auth/AuthWrapper'
 
 export const metadata: Metadata = {
   title: 'EduAssist - Campus Accessibility Hub',
@@ -21,9 +23,13 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SkipLink />
-        <AccessibilityProvider>
-          {children}
-        </AccessibilityProvider>
+        <AuthProvider>
+          <AccessibilityProvider>
+            <AuthWrapper>
+              {children}
+            </AuthWrapper>
+          </AccessibilityProvider>
+        </AuthProvider>
       </body>
     </html>
   )
