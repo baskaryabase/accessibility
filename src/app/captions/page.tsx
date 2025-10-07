@@ -26,6 +26,7 @@ export default function CaptionsPage() {
     'video/webm',
     'video/mov',
     'video/avi',
+    'video/quicktime',
     'video/mkv'
   ]
 
@@ -46,6 +47,7 @@ export default function CaptionsPage() {
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (file) {
+      console.log(file.type)
       if (supportedFormats.includes(file.type)) {
         setVideoFile(file)
         setTranscription('')

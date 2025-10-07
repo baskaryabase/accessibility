@@ -14,19 +14,6 @@ export function Features() {
       link: '/tts'
     },
     {
-      id: 'stt',
-      title: 'Speech-to-Text (Voice Commands)',
-      description: 'Navigate, fill forms, or search using voice commands powered by Google Cloud Speech-to-Text API.',
-      features: [
-        'Real-time voice recognition',
-        'Natural language commands',
-        'Hands-free navigation',
-        'Form completion assistance'
-      ],
-      icon: '🎙️',
-      link: '/voice'
-    },
-    {
       id: 'captions',
       title: 'Automatic Subtitles & Captions',
       description: 'Auto-generates captions for lecture videos using Google Cloud Video Intelligence and Speech-to-Text APIs.',
@@ -77,7 +64,20 @@ export function Features() {
       ],
       icon: '🗣️',
       link: '/translate'
-    }
+    },
+    {
+      id: 'stt',
+      title: 'Speech-to-Text (Voice Commands)',
+      description: 'Navigate, fill forms, or search using voice commands powered by Google Cloud Speech-to-Text API.',
+      features: [
+        'Real-time voice recognition',
+        'Natural language commands',
+        'Hands-free navigation',
+        'Form completion assistance'
+      ],
+      icon: '🎙️',
+      link: '/voice'
+    },
   ]
 
   return (
