@@ -40,6 +40,19 @@ export function Features() {
       link: '/captions'
     },
     {
+      id: 'braille',
+      title: 'Braille Converter',
+      description: 'Convert lectures, speeches, and important notes into Grade 1 or Grade 2 Braille format for tactile reading.',
+      features: [
+        'Grade 1 & 2 Braille support',
+        'File upload (TXT, PDF, DOC)',
+        'Print-ready BRF format',
+        'Visual Braille display'
+      ],
+      icon: '⠃',
+      link: '/braille'
+    },
+    {
       id: 'interface',
       title: 'Accessible Interface',
       description: 'Designed with accessibility-first principles for seamless integration with assistive technologies.',

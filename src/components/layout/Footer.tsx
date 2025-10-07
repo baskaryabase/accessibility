@@ -37,6 +37,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/braille" className="text-gray-600 hover:text-primary-600 transition-colors duration-200">
+                  Braille Converter
+                </a>
+              </li>
+              <li>
                 <a href="/voice" className="text-gray-600 hover:text-primary-600 transition-colors duration-200">
                   Voice Navigation
                 </a>

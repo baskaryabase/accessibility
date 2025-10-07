@@ -14,6 +14,8 @@ export function VoiceNavigation() {
   const voiceCommands = [
     { command: 'open timetable', action: 'Navigate to timetable', description: 'Opens your class schedule' },
     { command: 'show library schedule', action: 'Navigate to library', description: 'Shows library hours and availability' },
+    { command: 'open braille converter', action: 'Navigate to braille', description: 'Opens the Braille conversion tool' },
+    { command: 'convert to braille', action: 'Navigate to braille', description: 'Opens the Braille conversion tool' },
     { command: 'read announcements', action: 'Text-to-speech announcements', description: 'Reads latest campus announcements' },
     { command: 'start reading', action: 'Text-to-speech on', description: 'Begins reading page content' },
     { command: 'stop reading', action: 'Text-to-speech off', description: 'Stops reading content' },
@@ -95,6 +97,10 @@ export function VoiceNavigation() {
         break
       case 'show library schedule':
         window.location.href = '/library'
+        break
+      case 'open braille converter':
+      case 'convert to braille':
+        window.location.href = '/braille'
         break
       case 'read announcements':
         readPageContent()
@@ -250,6 +256,7 @@ export function VoiceNavigation() {
             <p className="text-xs text-gray-600 mb-2">Try saying:</p>
             <ul className="text-xs text-gray-600 space-y-1">
               <li>"Open timetable"</li>
+              <li>"Convert to braille"</li>
               <li>"Read announcements"</li>
               <li>"High contrast on"</li>
               <li>"Help" for more commands</li>

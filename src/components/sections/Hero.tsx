@@ -24,7 +24,7 @@ export function Hero() {
           </div>
           
           {/* Accessibility Features Preview */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-16">
             <div className="card text-center">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl" role="img" aria-label="Voice">🔊</span>
@@ -52,6 +52,16 @@ export function Hero() {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Text-to-Speech</h3>
               <p className="text-gray-600">
                 Convert announcements, lecture notes, and campus updates into natural-sounding speech
+              </p>
+            </div>
+            
+            <div className="card text-center">
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl" role="img" aria-label="Braille">⠃</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Braille Converter</h3>
+              <p className="text-gray-600">
+                Transform lectures and notes into Grade 1 or Grade 2 Braille format for tactile reading
               </p>
             </div>
           </div>

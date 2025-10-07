@@ -40,6 +40,14 @@ EduAssist serves as a unified accessibility hub that helps students interact wit
 - Editable transcripts with timestamps
 - Export capabilities (SRT format)
 
+### ⠃ Braille Converter
+- Convert lectures, speeches, and important notes into Braille format
+- Support for both Grade 1 (uncontracted) and Grade 2 (contracted) Braille
+- File upload support (TXT, PDF, DOC, DOCX)
+- Print-ready BRF format output
+- Visual Braille display for verification
+- Copy/paste and download functionality
+
 ### 🌐 Accessible Interface
 - High-contrast mode support
 - Adjustable font sizes (small, medium, large, xl)
@@ -163,9 +171,12 @@ eduassist/
 │   │   ├── api/                      # API routes
 │   │   │   ├── tts/                  # Text-to-Speech API
 │   │   │   ├── stt/                  # Speech-to-Text API
-│   │   │   └── video-captions/       # Video captioning API
+│   │   │   ├── video-captions/       # Video captioning API
+│   │   │   ├── braille-convert/      # Braille conversion API
+│   │   │   └── extract-text/         # Text extraction API
 │   │   ├── tts/                      # TTS feature page
 │   │   ├── captions/                 # Captions feature page
+│   │   ├── braille/                  # Braille converter page
 │   │   ├── voice/                    # Voice navigation page
 │   │   ├── layout.tsx                # Root layout
 │   │   ├── page.tsx                  # Home page
@@ -205,8 +216,23 @@ const response = await fetch('/api/tts', {
 });
 ```
 
+### Braille Converter
+```javascript
+// Convert text to Braille
+const response = await fetch('/api/braille-convert', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    text: 'Computer Science Lecture Notes',
+    grade: 'grade2', // or 'grade1'
+    includeVisual: true
+  })
+});
+```
+
 ### Voice Commands
 - "Open timetable" - Navigate to schedule
+- "Convert to braille" - Open Braille converter
 - "Read announcements" - Start TTS for content
 - "High contrast on" - Enable accessibility mode
 - "Help" - Show available commands

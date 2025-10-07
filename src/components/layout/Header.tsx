@@ -13,6 +13,7 @@ export function Header() {
     { name: 'Features', href: '#features', current: false },
     { name: 'Text-to-Speech', href: '/tts', current: false },
     { name: 'Captions', href: '/captions', current: false },
+    { name: 'Braille', href: '/braille', current: false },
     { name: 'Voice Navigation', href: '/voice', current: false },
   ]
 
